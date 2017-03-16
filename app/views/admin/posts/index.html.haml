@@ -1,0 +1,50 @@
+
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1
+      Videos
+      %small All New Now Posts
+    %ol.breadcrumb
+      %li
+        %a{:href => admin_root_path}
+          %i.fa.fa-dashboard
+          Home
+      %li.active
+        %a{:href => admin_posts_path}
+          Videos
+  / Main content
+  %section.content
+    .row
+      .col-xs-12
+        .box
+          .box-header
+            %h3.box-title All Posts
+            .box-tools
+              %a{:href => new_admin_post_path}
+                %button.btn.btn-sm.btn-default
+                  %i.fa.fa-plus-circle
+              -# .input-group{:style => "width: 150px;"}
+              -#   %input.form-control.input-sm.pull-right{:name => "table_search", :placeholder => "Search", :type => "text"}
+              -#     .input-group-btn
+              -#       %button.btn.btn-sm.btn-default
+              -#         %i.fa.fa-search
+          / /.box-header
+          .box-body.table-responsive.no-padding
+            %table.table.table-hover{:style => "width: 100%;"}
+              %tr
+                %th Headline
+                %th Body
+                %th Link
+                %th Length
+                %th Date
+              - @posts.each do |post|
+                %tr
+                  %td= post.headline
+                  %td= post.body
+                  %td= post.link
+                  %td= post.length
+                  %td= post.date
+                  %td
+                    %span= link_to "", edit_admin_post_path(post), class: 'btn fa fa-pencil'
+                    %span= link_to "", admin_post_path(post), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn fa fa-trash'

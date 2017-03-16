@@ -1,0 +1,37 @@
+.row
+	/ left column
+	.col-md-8
+		/ general form elements
+		.box.box-primary
+			.box-header.with-border
+				%h3.box-title New Post
+			/ /.box-header
+			/ form start
+			%h3{:style => "padding: 10px;"}
+				Post Details
+			= simple_form_for [:admin, @post] do |f|
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+						Post Link
+					= f.input_field :link, placeholder: 'Post link'
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+						Headline
+					= f.input_field :headline, placeholder: 'Post Title'
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+						Body
+					= f.input_field :body,  placeholder: 'Post Body'
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+						Length
+					= f.input :length, placeholder: "Length to read"
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+						Date
+					= f.input_field :date, placeholder: 'Date to go live'
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+					= f.input :date, :as => :date, :input_html => {:class => 'date_picker'}
+				.input-container.submit-btn-wrapper
+					= f.submit "Submit", class: "submit-btn validate-form"

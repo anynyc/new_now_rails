@@ -1,0 +1,18 @@
+/ Content Wrapper. Contains page content
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1
+      Edit A Post
+
+    %ol.breadcrumb
+      %li
+        %a{:href => admin_root_path}
+          %i.fa.fa-dashboard
+          Home
+      %li
+        %a{:href => admin_posts_path} Posts
+      %li.active Edit
+  / Main content
+  %section.content#wizard-appendix
+    = render 'form'
