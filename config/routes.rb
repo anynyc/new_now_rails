@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: :logout
     root 'dashboard#index'
     resources :posts
+    resources :days
   end
 
   namespace :api do

@@ -1,0 +1,47 @@
+
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1
+      Days
+      -# %small All New Now Posts
+    -# %ol.breadcrumb
+    -#   %li
+    -#     %a{:href => admin_root_path}
+    -#       %i.fa.fa-dashboard
+    -#       Home
+    -#   %li.active
+    -#     %a{:href => admin_days_path}
+    -#       Days
+  / Main content
+  %section.content
+    .row
+      .col-xs-12
+        .box
+          .box-header
+            %h3.box-title All Days
+            .box-tools
+              -# .input-group{:style => "width: 150px;"}
+              -#   %input.form-control.input-sm.pull-right{:name => "table_search", :placeholder => "Search", :type => "text"}
+              -#     .input-group-btn
+              -#       %button.btn.btn-sm.btn-default
+              -#         %i.fa.fa-search
+          / /.box-header
+          .box-body.table-responsive.no-padding
+            %table.table.table-hover{:style => "width: 100%;"}
+              %tr
+                %th Date
+                %th Number of Posts
+              - @days.each do |day|
+                - if day.date == Date.today
+                  %tr{style: "background-color: lightblue;"}
+                    %td= day.date.strftime("%B %d, %Y")
+                    %td= day.number_of_posts
+                    %td
+                      %span= link_to "", admin_day_path(day), class: 'btn fa fa-pencil'
+                -else
+                  %tr
+                    %td= day.date.strftime("%B %d, %Y")
+                    %td= day.number_of_posts
+                    %td
+                      %span= link_to "", admin_day_path(day), class: 'btn fa fa-pencil'

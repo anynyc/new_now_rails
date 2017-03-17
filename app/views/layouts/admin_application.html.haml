@@ -52,7 +52,7 @@
             / User Account: style can be found in dropdown.less
             %li.dropdown.user.user-menu{style: "list-style: none;"}
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", style: "padding: 10px;" }
-                %img.user-image{:alt => "User Image", :src => image_path('goodgoodlogo.png')}
+                %img.user-image{:alt => "User Image", :src => image_path('AnyLogo.png')}
                   -# %span.hidden-xs= "Mike Trumpf"
               %ul.dropdown-menu
                 -# / User image
@@ -86,9 +86,9 @@
         / Sidebar user panel
         .user-panel{ :style => "height: 50px;" }
           .pull-left.image
-            %img.img-circle{:alt => "User Image", :src => image_path('goodgoodlogo.png')}
+            %img.img-circle{:alt => "User Image", :src => image_path('AnyLogo.png')}
           .pull-left.info
-            %p= "Mike Trumpf"
+            -# %p= "Mike Trumpf"
             %a{:href => "#"}
         / /.search form
         / sidebar menu: : style can be found in sidebar.less
@@ -103,9 +103,9 @@
             /   %i.fa.fa-angle-left.pull-right
             %ul.treeview-menu
               %li
-                %a{:href => admin_posts_path}
+                %a{:href => admin_days_path}
                   %i.fa.fa-calendar
-                  Posts
+                  Days
 
 
 
