@@ -22,7 +22,7 @@
             %h3.box-title
 
             .box-tools
-              %a{:href => new_admin_post_path}
+              %a{:href => new_admin_post_path(day: @current_day)}
                 %button.btn.btn-sm.btn-default
                   %i.fa.fa-plus-circle New Post
               -# .input-group{:style => "width: 150px;"}

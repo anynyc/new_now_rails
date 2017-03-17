@@ -4,34 +4,36 @@
 		/ general form elements
 		.box.box-primary
 			.box-header.with-border
-				%h3.box-title New Post
+				%h3.box-title
+					="New Post for #{@day.date.strftime("%B %d, %Y")}"
 			/ /.box-header
 			/ form start
 			%h3{:style => "padding: 10px;"}
 				Post Details
 			= simple_form_for [:admin, @post] do |f|
-				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
 					%label
 						Post Link
-					= f.input_field :link, placeholder: 'Post link'
+					= f.input_field :link, placeholder: 'Post link', class: "form-control"
 				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
 					%label
 						Headline
-					= f.input_field :headline, placeholder: 'Post Title'
+					= f.input_field :headline, placeholder: 'Post Title', class: "form-control"
 				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
 					%label
 						Body
-					= f.input_field :body,  placeholder: 'Post Body'
+					= f.input_field :body,  placeholder: 'Post Body', class: "form-control"
 				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
 					%label
 						Length
-					= f.input :length, placeholder: "Length to read"
+					= f.input_field :length, placeholder: "Length to read", class: "form-control"
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					= f.hidden_field :date, value: @day.date
+					= f.hidden_field :day_id, value: @day.id
 				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
 					%label
-						Date
-					= f.input_field :date, placeholder: 'Date to go live'
-				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
-					%label
-					= f.input :date, :as => :date, :input_html => {:class => 'date_picker'}
+						Position
+					= f.input_field :position, placeholder: "Position", class: "form-control"
+
 				.input-container.submit-btn-wrapper
-					= f.submit "Submit", class: "submit-btn validate-form"
+					= f.submit "Submit", as: :int, class: "submit-btn validate-form"

@@ -5,12 +5,14 @@ class Admin::PostsController < Admin::AdminApplicationController
 
   def new
     @post = Post.new
+    @day = Day.find(params["day"])
   end
 
   def create
     @post = Post.new post_params
     if @post.save
-      redirect_to admin_posts_path
+      @day = Day.find(@post.day_id)
+      redirect_to admin_days_path(@day)
     else
       render 'new'
     end
@@ -18,12 +20,15 @@ class Admin::PostsController < Admin::AdminApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @day = Day.find(@post.day_id)
+
   end
 
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to admin_posts_path
+      @day = Day.find(@post.day_id)
+      redirect_to admin_day_path(@day)
     else
       render 'edit'
     end

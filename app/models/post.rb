@@ -8,5 +8,5 @@ class Post < ApplicationRecord
 
 
 
-  
+
 end
