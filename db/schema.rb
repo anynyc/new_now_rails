@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317155344) do
+ActiveRecord::Schema.define(version: 20170328024234) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170317155344) do
     t.integer  "times_shared", default: 0
     t.boolean  "is_hot",       default: false
     t.integer  "day_id"
+    t.string   "image"
   end
 
 end

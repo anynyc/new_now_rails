@@ -21,6 +21,10 @@
 					= f.input_field :headline, placeholder: 'Post Title', class: "form-control"
 				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
 					%label
+						Still Image
+					= f.input :image, as: :file, label: false
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
 						Body
 					= f.input_field :body,  placeholder: 'Post Body', class: "form-control"
 				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}

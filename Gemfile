@@ -40,6 +40,12 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'lte-rails'
 gem 'haml', '~> 4.0', '>= 4.0.7'
+
+# image mmgmt
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'carrierwave-base64'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

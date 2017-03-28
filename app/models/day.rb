@@ -32,7 +32,9 @@ class Day < ApplicationRecord
     return posts[0, 7]
   end
 
-
+  def self.today
+    return Day.find_by_date(Date.today)
+  end
 
 
 end
