@@ -30,6 +30,38 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  def is_landscape(image)
+    file_url = image.file
+    img = MiniMagick::Image.open(file_url)
+      img_w = img[:width].to_f
+      img_h = img[:height].to_f
+
+      if (img_w > img_h)
+        true
+      else
+        false
+      end
+  end
+
+  # version :slider do
+  #   process :make_landscape
+  # end
+
+  def create_landscape_version
+    img = Magick::Image.read(current_path)
+    width = img[0].columns
+    height = img[0].rows
+    if width > height
+      # original is landscape
+      # resize_to_fill(738, 492)
+      resize_to_fit(400, 600)
+      resize_to_fill(600, 273)
+    else
+      # original is portrait
+      resize_to_fit(738, 492)
+    end
+  end
+
 
   # Create different versions of your uploaded files:
   version :thumb do
@@ -37,12 +69,29 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :portrait do
-    process :resize_to_fit => [250, 250]
+    process :resize_to_fit => [400, 600]
   end
 
   version :screen do
     process :resize_to_fill => [667, 375]
   end
+
+  version :resize, if: :is_landscape == true do
+    resize_to_fit(286, 500)
+  end
+
+  version :resize_two, if: :is_landscape == false do
+    process :resize_to_fill => [286, 500]
+  end
+
+
+  def my_resize(width, height)
+    manipulate! do |img|
+      img.resize "#{width}x#{height}!"
+      img
+    end
+  end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
