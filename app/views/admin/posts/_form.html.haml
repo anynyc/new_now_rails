@@ -47,6 +47,10 @@
 					= f.hidden_field :day_id, value: @day.id
 				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
 					%label
+						Link Message
+					= f.input_field :link_text, placeholder: 'Link Text', class: "form-control"
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
 						Position
 					= f.input_field :position, placeholder: "Position", class: "form-control"
 

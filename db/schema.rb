@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330001432) do
+ActiveRecord::Schema.define(version: 20170411193105) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20170330001432) do
     t.string   "length"
     t.string   "link"
     t.datetime "date"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.boolean  "read",         default: false
     t.integer  "position"
     t.integer  "times_shared", default: 0
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170330001432) do
     t.integer  "day_id"
     t.string   "image"
     t.string   "category"
+    t.string   "link_text",    default: "READ THIS"
   end
 
 end
