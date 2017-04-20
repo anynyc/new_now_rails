@@ -5,6 +5,13 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  before_save :upcase_link_text
+
+
+  def upcase_link_text
+    self.link_text = self.link_text.upcase
+    self.category = self.category.upcase
+  end
 
 
 
