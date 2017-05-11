@@ -1,0 +1,51 @@
+.row
+	/ left column
+	.col-md-8
+		/ general form elements
+		.box.box-primary
+			.box-header.with-border
+				%h3.box-title New Gratification
+			/ /.box-header
+			/ form start
+			%h3{:style => "padding: 10px;"}
+				Gratification Details
+			= simple_form_for [:admin, @gratification] do |f|
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Gratification Title
+					= f.input_field :title, placeholder: 'Gratification title', class: "form-control"
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Gratification Message
+					= f.input_field :message, placeholder: 'Gratification message', class: "form-control"
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Gratification Search Term
+					= f.input_field :keyword, placeholder: 'Gratification Keyword', class: "form-control"
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Button Label
+					= f.input_field :button_label, placeholder: 'Gratification Button Label', class: "form-control"
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Alernate Message (if they don't provide location)
+					= f.input_field :alternate_message, placeholder: 'Alternate Message', class: "form-control"
+				.input-container{:style => "float: left; margin-left: 2em; padding-top: 1em; padding-bottom: 1em;"}
+					%label
+						Is Active?
+					= f.input_field :active, as: :boolean, type: :checkbox, placeholder: 'Active', class: ""
+				.div{:style => "clear: both"}
+				.input-container{:style => "border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal"}
+					%label
+						Background Image
+					-if @gratification.image.portrait.url != nil
+						%br
+						=image_tag(@gratification.image.portrait.url)
+						=f.file_field :image
+						=f.hidden_field :image_cache
+					-else
+						=f.file_field :image
+						=f.hidden_field :image_cache
+
+				.input-container.submit-btn-wrapper
+					= f.submit "Submit", as: :int, class: "submit-btn validate-form"

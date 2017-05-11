@@ -10,10 +10,8 @@ class Day < ApplicationRecord
   def get_posts
     posts = self.posts.to_a
     id = self.id
-
     ##take position into account
-
-    while posts.count <= 7
+    while posts.count < 7
       ##get posts from previous day
       previous_day_posts = Post.where(day_id: (id - 1))
       sorted_posts = previous_day_posts.sort_by {|post| post.position}
