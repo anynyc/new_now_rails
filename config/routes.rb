@@ -9,12 +9,14 @@ Rails.application.routes.draw do
     resources :posts
     resources :days
     resources :gratifications
+    resources :greetings
   end
 
   namespace :api do
   ##POC routes no sessions
     namespace :v1 do
       resources :posts, only: [:index]
+      resources :greetings, only: [:index]
     end
   end
 end

@@ -1,0 +1,22 @@
+.row
+	/ left column
+	.col-md-8
+		/ general form elements
+		.box.box-primary
+			.box-header.with-border
+				%h3.box-title New Greeting
+			/ /.box-header
+			/ form start
+			%h3{:style => "padding: 10px;"}
+				Greeting Details
+			= simple_form_for [:admin, @greeting] do |f|
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Greeting Edition
+					= f.input_field :edition, placeholder: '000', class: "form-control"
+				.input-container{:style => "float: left; border: none; padding: 9px; outline: none; margin: 0 0 0 5px; font-family: os-regular; font-size: 20px; color: #000; font-weight: normal;"}
+					%label
+						Greeting Title
+					= f.input_field :title, placeholder: 'Gratification Title', class: "form-control"
+				.input-container.submit-btn-wrapper
+					= f.submit "Submit", class: "submit-btn validate-form"
