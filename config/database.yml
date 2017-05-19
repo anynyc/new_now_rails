@@ -46,6 +46,7 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql
   database: any_ios
   username: railsapps
   password: 2ca2cbda
