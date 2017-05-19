@@ -67,7 +67,7 @@ set :stage, :production
 
 server 'otheranother.com',
   user: 'railsapps',
-  roles: %w{web app},
+  roles: %w{web app test db},
   ssh_options: {
     user: 'railsapps', # overrides user setting above
     keys: %w(/home/railsapps/.ssh/id_rsa),
