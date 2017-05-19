@@ -50,3 +50,4 @@ production:
   database: any_ios
   username: railsapps
   password: 2ca2cbda
+  socket: /tmp/mysql.sock
