@@ -26,7 +26,7 @@ SSHKit.config.command_map[:rails] = "bundle exec rails"
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('/home/railsapps/public_html/any_ios/shared/config/database.yml')
+set :linked_files, fetch(:linked_files, []).push('/home/railsapps/public_html/new_now_rails/shared/config/database.yml')
 # set :linked_dirs, %w{public/uploads}
 
 # Default value for linked_dirs is []
