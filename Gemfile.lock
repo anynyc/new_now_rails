@@ -261,7 +261,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   listen (~> 3.0.5)
-  lte-rails
+  lte-rails (~> 0.0.5)
   mini_magick
   mysql2
   pry-rails
