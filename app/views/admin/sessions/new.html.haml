@@ -1,5 +1,5 @@
 = stylesheet_link_tag 'admin/application', media: 'all', 'data-turbolinks-track' => true
--# = stylesheet_link_tag 'stylesheets/admin/application', media: 'all', 'data-turbolinks-track' => true
+-# = stylesheet_link_tag '/application', media: 'all', 'data-turbolinks-track' => true
 
 .login-box
   .login-logo
@@ -36,19 +36,19 @@
   / /.login-box-body
 / /.login-box
 / jQuery 2.1.4
-%script{:src => "../../plugins/jQuery/jQuery-2.1.4.min.js"}
-/ Bootstrap 3.3.5
-%script{:src => "../../bootstrap/js/bootstrap.min.js"}
-/ iCheck
-%script{:src => "../../plugins/iCheck/icheck.min.js"}
-:javascript
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });
+-# %script{:src => "../../plugins/jQuery/jQuery-2.1.4.min.js"}
+-# / Bootstrap 3.3.5
+-# %script{:src => "../../bootstrap/js/bootstrap.min.js"}
+-# / iCheck
+-# %script{:src => "../../plugins/iCheck/icheck.min.js"}
+-# :javascript
+-#   $(function () {
+-#     $('input').iCheck({
+-#       checkboxClass: 'icheckbox_square-blue',
+-#       radioClass: 'iradio_square-blue',
+-#       increaseArea: '20%' // optional
+-#     });
+-#   });
 %br
 %br
 %br
