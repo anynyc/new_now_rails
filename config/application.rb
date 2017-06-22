@@ -20,7 +20,7 @@ module NewNowRails
 
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets")
-
+    config.action_controller.asset_host = "http://otheranother.com/assets"
 
   end
 end
