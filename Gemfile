@@ -39,6 +39,8 @@ gem 'twitter'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'lte-rails', '~> 0.0.5'
+gem "jquery-fileupload-rails"
+
 gem 'haml', '~> 4.0', '>= 4.0.7'
 # image mmgmt
 gem 'carrierwave'
