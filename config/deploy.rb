@@ -27,7 +27,7 @@ SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
-set :linked_files, %w{config/database.yml}
+# set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{public/uploads}
 
 # Default value for linked_dirs is []
