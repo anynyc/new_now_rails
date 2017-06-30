@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: :logout
     root 'dashboard#index'
     resources :posts
+    get "show_month", to: "days#show_month"
+    get "month_up", to: "days#month_up"
+    get "month_down", to: "days#month_down"
     resources :days
     resources :gratifications
     resources :greetings

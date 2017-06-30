@@ -1,0 +1,2 @@
+// $("#day_list").html("")
+$("#day_list").html("<%= j render :partial => 'days_list', :locals => {:@days => @days, :@month_number => @month_number, :@year_number => @year_number, :@month => @month}%>")

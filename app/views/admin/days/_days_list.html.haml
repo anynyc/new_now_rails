@@ -1,0 +1,35 @@
+%section.content
+  .row
+    .col-xs-12
+      .box
+        .box-header
+          %span#month-down{data: {month: @month_number, year: @year_number}}= link_to "", "", class: 'btn fa fa-arrow-circle-left fa-2x'
+
+          %h3.box-title#month-date
+            =@month
+          %span#month-up{data: {month: @month_number, year: @year_number}}= link_to "", "", class: 'btn fa fa-arrow-circle-right fa-2x'
+          -# .box-tools
+          -#   .input-group{:style => "width: 150px;"}
+          -#     -# %input.form-control.input-sm.pull-right{:name => "table_search", :placeholder => "Search", :type => "text"}
+          -#       .input-group-btn
+          -#         %button.btn.btn-sm.btn-default
+          -#           %i.fa.fa-search= link_to "", admin_greetings_path
+        / /.box-header
+        .box-body.table-responsive.no-padding
+          %table.table.table-hover{:style => "width: 100%;"}
+            %tr
+              %th Date
+              %th Number of Posts
+            - @days.each do |day|
+              - if day.date == Date.today
+                %tr{style: "background-color: lightblue;"}
+                  %td= day.date.strftime("%B %d, %Y")
+                  %td= day.number_of_posts
+                  %td
+                    %span= link_to "", admin_day_path(day), class: 'btn fa fa-pencil'
+              -else
+                %tr
+                  %td= day.date.strftime("%B %d, %Y")
+                  %td= day.number_of_posts
+                  %td
+                    %span= link_to "", admin_day_path(day), class: 'btn fa fa-pencil'
