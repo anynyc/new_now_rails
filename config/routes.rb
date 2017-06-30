@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :days
     resources :gratifications
     resources :greetings
+    resources :push_notifications
   end
 
   namespace :api do

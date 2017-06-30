@@ -1,0 +1,43 @@
+
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1
+      Push Notifications
+      -# %small All New Now Posts
+    %ol.breadcrumb
+      %li
+        %a{:href => admin_root_path}
+          %i.fa.fa-dashboard
+          Home
+      %li.active
+        %a{:href => admin_push_notifications_path}
+          Notifications
+  / Main content
+  %section.content
+    .row
+      .col-xs-12
+        .box
+          .box-header
+            %h3.box-title All Notifications
+            .box-tools
+              %a{:href => new_admin_push_notification_path}
+                %button.btn.btn-sm.btn-default
+                  %i.fa.fa-plus-circle
+          .box-body.table-responsive.no-padding
+            %table.table.table-hover{:style => "width: 100%;"}
+              %tr
+                %th Message
+                %th Active
+                %th Send to Users
+                %th Edit
+                %th Delete
+              - @push_notifications.each do |notification|
+                %tr
+                  %td= notification.message
+                  %td= notification.active
+                  %td= "Button Here"
+                  %td
+                    %span= link_to "", edit_admin_push_notification_path(notification), class: 'btn fa fa-pencil'
+                  %td
+                    %span= link_to "", admin_push_notification_path(notification), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn fa fa-trash'

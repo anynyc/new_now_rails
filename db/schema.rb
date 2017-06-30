@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512185910) do
+ActiveRecord::Schema.define(version: 20170630180938) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 20170512185910) do
     t.string   "g_value",      default: "0"
     t.string   "b_value",      default: "0"
     t.string   "a_value",      default: "0.76"
+  end
+
+  create_table "push_notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "message"
+    t.boolean  "active",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
