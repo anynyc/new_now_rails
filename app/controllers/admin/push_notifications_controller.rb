@@ -52,13 +52,13 @@ class Admin::PushNotificationsController < Admin::AdminApplicationController
     @push_notification = PushNotification.find(params["format"])
     @tokens = Token.all
     @tokens.each do |token|
-      push_notification = PushAlert.new(
+      push_alert = PushAlert.new(
         token: token,
         notification: "New Articles",
         alert: "#{@push_notification.message}!"
       )
-      response = push_notification.create_notification
-
+      response = push_alert.create_notification
+      Rails.logger.info response
     end
   end
 
