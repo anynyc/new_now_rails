@@ -47,6 +47,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave-base64'
 
+# push notification
+gem 'rpush'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
