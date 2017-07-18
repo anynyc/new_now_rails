@@ -26,8 +26,8 @@ Rpush.configure do |config|
   # Define a custom logger.
   # config.logger = MyLogger.new
 
-  # config.apns.feedback_receiver.enabled = true
-  # config.apns.feedback_receiver.frequency = 60
+  config.apns.feedback_receiver.enabled = true
+  config.apns.feedback_receiver.frequency = 60
 
 end
 
@@ -51,13 +51,13 @@ Rpush.reflect do |on|
   # end
 
   # Called when a notification is successfully delivered.
-  # on.notification_delivered do |notification|
-  # end
+  on.notification_delivered do |notification|
+  end
 
   # Called when notification delivery failed.
   # Call 'error_code' and 'error_description' on the notification for the cause.
-  # on.notification_failed do |notification|
-  # end
+  on.notification_failed do |notification|
+  end
 
   # Called when the notification delivery failed and only the notification ID
   # is present in memory.
@@ -76,8 +76,9 @@ Rpush.reflect do |on|
   # end
 
   # Called when a TCP connection is lost and will be reconnected.
-  # on.tcp_connection_lost do |app, error|
-  # end
+  on.tcp_connection_lost do |app, error|
+
+  end
 
   # Called for each recipient which successfully receives a notification. This
   # can occur more than once for the same notification when there are multiple
