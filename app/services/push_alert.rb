@@ -19,10 +19,10 @@ class PushAlert
     if title && Rpush::Apns::App.find_by_name(title).nil?
       app = Rpush::Apns::App.new
       app.name = title
-      # app.certificate = File.read("#{Rails.root}/any_app_development.pem")
-      # app.environment = "development" # APNs environment.
-      app.certificate = File.read("#{Rails.root}/any_app_production.pem")
-      app.environment = "production" # APNs environment.
+      app.certificate = File.read("#{Rails.root}/any_app_development.pem")
+      app.environment = "development" # APNs environment.
+      # app.certificate = File.read("#{Rails.root}/any_app_production.pem")
+      # app.environment = "production" # APNs environment.
       app.password = ""
       app.connections = 1
       app.save!
@@ -33,7 +33,7 @@ class PushAlert
     if @token && @notification && @alert
       n = Rpush::Apns::Notification.new
       n.app = Rpush::Apns::App.find_by_name(@notification)
-      n.device_token = @token
+      n.device_token = @token.push_token
       n.alert = @alert
       n.sound = "default"
       n.data = { foo: :bar }

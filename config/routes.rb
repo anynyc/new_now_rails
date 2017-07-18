@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     resources :days
     resources :gratifications
     resources :greetings
+
     resources :push_notifications
+    get "send_out_push_notification", to: "push_notifications#send_out"
+
   end
 
   namespace :api do

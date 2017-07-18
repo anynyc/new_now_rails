@@ -36,7 +36,8 @@
                 %tr
                   %td= notification.message
                   %td= notification.active
-                  %td= "Button Here"
+                  %td
+                    %span= link_to "", admin_send_out_push_notification_path(notification), class: 'btn fa fa-rocket'
                   %td
                     %span= link_to "", edit_admin_push_notification_path(notification), class: 'btn fa fa-pencil'
                   %td
