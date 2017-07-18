@@ -5,9 +5,9 @@ class PushAlert
     # @notifiction = notification
     # @alert = alert
 
-    @token = '40d3d6b527dc6a1e76715a9bbbbe2e272edb1ad5eb47b35fb98cf1282df61f1d'
-    @notification = "New Articles!"
-    @alert = "Check out the latest articles about design"
+    @token = token
+    @notification = notification
+    @alert = alert
     #commenting out to test
     self.setup(@notification)
     # setup("test", "This is a test message Michael")

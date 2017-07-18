@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :posts, only: [:index]
       resources :greetings, only: [:index]
+      post "push_token", to: "tokens#create"
     end
   end
 end
