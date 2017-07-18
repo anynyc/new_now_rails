@@ -12,6 +12,8 @@ set :deploy_to, '/home/railsapps/public_html/any_ios/'
 
 SSHKit.config.command_map[:rake]  = "bundle exec rake"
 SSHKit.config.command_map[:rails] = "bundle exec rails"
+SSHKit.config.command_map[:rpushstop] = "bundle exec rpush stop -e production"
+SSHKit.config.command_map[:rpushstart] = "bundle exec rpush start -e production"
 
 # Default value for :scm is :git
 # set :scm, :git

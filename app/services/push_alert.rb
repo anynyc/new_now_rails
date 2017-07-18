@@ -38,6 +38,7 @@ class PushAlert
       n.sound = "default"
       n.data = { foo: :bar }
       n.save!
+      puts "IS THIS DELIVERED? #{n.delivered}"
       if n.delivered == true
         return "success!"
       else
