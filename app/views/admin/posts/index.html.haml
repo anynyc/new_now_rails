@@ -36,14 +36,14 @@
                 -# %th Headline
                 %th Body
                 %th Link
-                %th Length
+                -# %th Length
                 %th Position
               - @posts.each do |post|
                 %tr
                   -# %td= post.headline
                   %td= post.body
                   %td= post.link
-                  %td= post.length
+                  -# %td= post.length
                   %td= post.position
                   %td
                     %span= link_to "", edit_admin_post_path(post), class: 'btn fa fa-pencil'

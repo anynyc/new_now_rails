@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
 
-  
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -71,7 +71,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :portrait do
-    process :resize_to_fit => [400, 600]
+    process :resize_to_fit => [340, 450]
   end
 
   version :screen do
@@ -85,6 +85,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :resize_two, if: :is_landscape == false do
     process :resize_to_fill => [286, 500]
   end
+
+
 
 
   def my_resize(width, height)
