@@ -20,7 +20,6 @@ class Admin::DaysController < Admin::AdminApplicationController
   def month_down
     old_month_number = params["month"].to_i
     old_year_number = params["year"].to_i
-
     last_month_full_date = Date.civil(old_year_number, old_month_number).last_month
 
     @month_number = last_month_full_date.month
@@ -47,11 +46,15 @@ class Admin::DaysController < Admin::AdminApplicationController
 
 
   def month_up
+
+    Rails.logger.info "What is month from JS Listener #{params["month"].to_i}"
+    Rails.logger.info "What is year from JS Listener #{params["year"].to_i}"
+
+
+
     old_month_number = params["month"].to_i
     old_year_number = params["year"].to_i
-
     next_month_full_date = Date.civil(old_year_number, old_month_number).next_month
-
     @month_number = next_month_full_date.month
     @year_number = next_month_full_date.year
     @month = next_month_full_date.strftime("%B %Y")
@@ -63,10 +66,8 @@ class Admin::DaysController < Admin::AdminApplicationController
     # @month_number = Date.today.month
     # @year_number = Date.today.year
     self.check_days(first_day, last_day)
-
     @days = Day.where("date BETWEEN (?) AND (?)", first_day, last_day)
     @days = @days.sort_by{|day| day.date }
-
 
 
   end

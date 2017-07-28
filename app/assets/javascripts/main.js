@@ -21,6 +21,7 @@ $(function() {
     var month = $(this).data("month")
     var year = $(this).data("year")
 
+
     $.ajax({
       url: '/admin/month_up',
       dataType: 'script',
