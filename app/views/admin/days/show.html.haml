@@ -34,14 +34,14 @@
           .box-body.table-responsive.no-padding
             %table.table.table-hover{:style => "width: 100%;"}
               %tr
-                %th Headline
+                -# %th Headline
                 %th Body
                 %th Image
                 %th Position
 
               - @posts.each do |post|
                 %tr
-                  %td= post.headline
+                  -# %td= post.headline
                   %td= post.body
                   %td= image_tag(post.image.thumb.url)
                   %td= post.position
