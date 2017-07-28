@@ -3,7 +3,7 @@
   %head
     %meta{:charset => "utf-8"}
       %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
-        %title Any™ | Dashboard
+        %title Any_ | Dashboard
         / Tell the browser to be responsive to screen width
         %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}
           / Bootstrap 3.3.5
@@ -37,10 +37,10 @@
       %a.logo{:href => "#{admin_root_path}"}
         / mini logo for sidebar mini 50x50 pixels
         %span.logo-mini
-          %b> Any™
+          %b> Any_
         / logo for regular state and mobile devices
         %span.logo-lg
-          %b> Any™
+          %b> Any_
       / Header Navbar: style can be found in header.less
       %nav.navbar.navbar-static-top{:role => "navigation"}
         / Sidebar toggle button
@@ -50,9 +50,9 @@
         .navbar-custom-menu
           %ul.nav.navbar-nav
             / User Account: style can be found in dropdown.less
-            %li.dropdown.user.user-menu{style: "list-style: none;"}
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", style: "padding: 10px;" }
-                %img.user-image{:alt => "User Image", :src => image_path('AnyLogo.png')}
+            -# %li.dropdown.user.user-menu{style: "list-style: none;"}
+            -#   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", style: "padding: 10px;" }
+            -#     %img.user-image{:alt => "User Image", :src => image_path('any_underscore.png')}
                   -# %span.hidden-xs= "Mike Trumpf"
               %ul.dropdown-menu
                 -# / User image
@@ -85,8 +85,8 @@
       %section.sidebar
         / Sidebar user panel
         .user-panel{ :style => "height: 50px;" }
-          .pull-left.image
-            %img.img-circle{:alt => "User Image", :src => image_path('AnyLogo.png')}
+          -# .pull-left.image
+          -#   %img.img-circle{:alt => "User Image", :src => image_path('any_underscore.png')}
           .pull-left.info
             -# %p= "Mike Trumpf"
             %a{:href => "#"}
