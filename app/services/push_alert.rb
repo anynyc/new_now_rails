@@ -21,7 +21,9 @@ class PushAlert
       app.name = title
       # app.certificate = File.read("#{Rails.root}/any_app_development.pem")
       # app.environment = "development" # APNs environment.
-      app.certificate = File.read("#{Rails.root}/apple_push_production.pem")
+      # app.certificate = File.read("#{Rails.root}/apple_push_production.pem")
+      app.certificate = File.read("#{Rails.root}/any_app_production.pem")
+
       app.environment = "production" # APNs environment.
       app.password = ""
       app.connections = 1
