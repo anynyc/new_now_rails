@@ -36,7 +36,8 @@ class Admin::PostsController < Admin::AdminApplicationController
 
   def destroy
     post = Post.find(params["id"])
-    if post.save
+
+    if post.destroy
       flash[:notice] = "Post successfully disabled"
       redirect_to admin_days_path
     else

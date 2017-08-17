@@ -46,6 +46,7 @@ class PushAlert
       if n.delivered == true
         return "success!"
       else
+        ##if error is due to bad token then delete that token in db
         return n.error_description
       end
     end
